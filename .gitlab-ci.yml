@@ -1,0 +1,12 @@
+stages:
+    - deploy
+
+deploy:
+    image: docker:latest
+    stage: deploy
+    script:
+        - mkdir -p public
+        - cp *.* public/
+    artifacts:
+        paths:
+            - public
