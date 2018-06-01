@@ -1,7 +1,7 @@
 stages:
     - deploy
 
-deploy:
+pages:
     image: docker:latest
     stage: deploy
     script:
