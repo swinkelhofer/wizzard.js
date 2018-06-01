@@ -1,0 +1,211 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+body * {
+    box-sizing: border-box;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#overlay {
+    font-family: 'Lato';
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    z-index: 10000;
+    background-color: #1a222c;
+    color: white;
+    padding: 2rem;
+}
+#overlay > div {
+    position: relative;
+}
+#overlay h1 {
+    font-size: 24pt;
+    margin-top: 2.8rem;
+    margin-bottom: 2.8rem; 
+}
+#overlay p {
+    margin-top: 1.2rem;
+    margin-bottom: 2.8rem; 
+    display: block;
+}
+#overlay #close {
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    right: 1rem;
+    top: 1rem;
+    font-size: 18pt;
+}
+#overlay #scrollbar {
+    height: 100%;
+    right: 0px;
+    width: 5px;
+    border-radius: 100px;
+    background-color: rgb(60,60,60);
+    top: 0;
+    position: absolute;
+}
+#overlay #scrollbar #scroller {
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .3s ease-in-out 0s;
+    border-radius: 100px;
+    background-color: rgb(140,140,140);
+    height: 30px;
+    position: absolute;
+}
+#overlay #close:hover {
+    color: rgba(255,255,255,.7);
+}
+#overlay input.hidden + label {
+    width: 70%;
+    font-size: 12pt;
+    padding: 1.0rem;
+    height: 3.5rem;
+}
+#overlay input.hidden-top + label {
+    margin-top: -4rem;
+}
+#overlay input.hidden-bottom + label {
+    margin-top: 30rem;
+}
+#overlay input {
+    max-width: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#overlay label {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    transition: all .3s ease-in-out 0s;
+    left: 0;
+}
+#overlay label span {
+    align-items: center;
+    display: flex;
+}
+#overlay label span, #overlay label span *{
+    height: 100%;
+    width: auto;
+}
+
+#overlay fieldset {
+    height: 28rem;
+    overflow: hidden;
+    position: relative;
+    width: 700px;
+}
+
+@media (max-width: 767px) {
+    #overlay fieldset {
+        width: 100%;
+    }
+}
+
+#overlay input.selected + label {
+    background-color: rgba(255,255,255,.6);
+    width: 96%;
+    font-size: 18pt;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    height: 4.7rem;
+}
+#overlay input.level1 + label, #overlay input.level5 + label {
+    background-color: rgba(255,255,255,.1);
+    color: rgba(255,255,255,.3);
+    font-size: 14pt;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    height: 3.5rem;
+    width: 75%;
+}
+#overlay input.level2 + label, #overlay input.level4 + label {
+    background-color: rgba(255,255,255,.2);
+    color: rgba(255,255,255,.5);
+    font-size: 16pt;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    height: 4.0rem;
+    width: 82%;
+}
+
+#overlay div > input.level1 + label {
+    margin-top: 0rem;
+}
+#overlay div > input.level2 + label {
+    margin-top: 5rem;
+}
+#overlay div > input.selected + label {
+    margin-top: 11rem;
+}
+#overlay div > input.level4 + label {
+    margin-top: 17.5rem;
+}
+#overlay div > input.level5 + label {
+    margin-top: 23.5rem;
+}
+#overlay button {
+    background-color: rgba(255,255,255,.2);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 12pt;
+    margin-bottom: 2rem;
+    margin-right: .5rem;
+    outline: none;
+    color: white;
+    transition: background-color .3s ease-in-out 0s;
+}
+
+#overlay button:disabled, #overlay button:hover:disabled {
+    background-color: rgba(64,64,64,.2);
+}
+
+#overlay button:hover {
+    background-color: rgba(255,255,255,.4);
+}
